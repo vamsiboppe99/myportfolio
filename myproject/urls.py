@@ -15,10 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to my Django site!")
 
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
-    path('api/', include('portfolio.urls')),  # Replace 'portfolio.urls' with your app's URL configuration
-    # Add any other URL patterns here
+    # Keep the api/ path if you need it, otherwise you can remove it
+    # path('api/', include('api.urls')),
 ]
