@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('portfolio.urls')),
+    path('api/', include('portfolio.urls')),  # Replace 'portfolio.urls' with your app's URL configuration
+    # Add any other URL patterns here
 ]
