@@ -22,8 +22,7 @@ def home(request):
     return HttpResponse("Welcome to my Django site!")
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', home, name='home'),  # Add this line for the root URL
     path('admin/', admin.site.urls),
-    # Keep the api/ path if you need it, otherwise you can remove it
-    # path('api/', include('api.urls')),
+    path('api/', include('api.urls')),  # Assuming this is your existing API URLs
 ]
